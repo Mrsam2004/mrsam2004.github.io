@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200"> 
+    <title>Mr Sam 2004 | Digital Seva Kendra Pathargama</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap');
+        
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; margin: 0; width: 100%; overflow-x: hidden; }
+        .hero-section { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); position: relative; overflow: hidden; }
+        .nav-orange { background-color: #f0640d; }
+        
+        /* Service Cards Grid */
+        .service-card { 
+            background: white; border-radius: 12px; padding: 20px; text-align: center; 
+            transition: all 0.3s ease; border: 1px solid #e2e8f0; cursor: pointer;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: #f0640d; }
+        .icon-wrapper { width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 24px; color: white; }
+        
+        .cat-heading { border-left: 6px solid #f0640d; padding-left: 15px; margin: 40px 0 20px 0; font-weight: 800; color: #0f172a; text-transform: uppercase; }
+
+        /* Full Screen Form Modal */
+        #form-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); z-index: 9999; overflow-y: auto; padding: 40px 0; }
+        .modal-content { background: white; width: 95%; max-width: 800px; margin: 0 auto; border-radius: 20px; overflow: hidden; animation: slideDown 0.4s ease-out; }
+        
+        @keyframes slideDown { from { transform: translateY(-50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        
+        marquee { background: #fff3cd; color: #856404; font-weight: bold; padding: 10px 0; border-bottom: 1px solid #ffeeba; display: block; }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white py-4 px-10 flex justify-between items-center shadow-lg sticky top-0 z-50">
+        <div class="flex items-center space-x-4">
+            <div class="bg-blue-800 text-white p-3 rounded-lg font-black text-2xl leading-none shadow-md">SAM<br><span class="text-xs">2004</span></div>
+            <div>
+                <h1 class="text-3xl font-black text-blue-900 tracking-tighter">MR SAM 2004</h1>
+                <p class="text-[10px] font-bold text-orange-600 tracking-[4px] uppercase italic">Digital Seva Kendra Pathargama</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-10">
+            <div class="text-center bg-blue-50 px-6 py-2 rounded-lg border border-blue-100">
+                <p class="text-[10px] font-bold text-blue-600 uppercase">WhatsApp No.</p>
+                <p class="font-black text-gray-800">6200210570</p>
+            </div>
+            <a href="https://wa.me/916200210570" class="bg-green-600 text-white px-8 py-3 rounded-full font-black text-sm shadow-xl hover:bg-green-700 transition">HELP DESK</a>
+        </div>
+    </header>
+
+    <marquee scrollamount="7">🔥 Latest Update: New Ration Card Apply, Jati-Aay-Niwas Certificate, Railway Tatkal Ticket, Passport Appointment & All Online Forms available... Contact: 6200210570</marquee>
+
+    <section class="hero-section text-white py-24 px-10 flex items-center justify-between">
+        <div class="w-1/2">
+            <h2 class="text-7xl font-black mb-6 uppercase italic leading-none">Pura <span class="text-yellow-400 underline">Digital Seva</span><br>Ab Aapke Pass</h2>
+            <p class="text-xl opacity-80 mb-10 max-w-xl">Sari 100+ services niche di gayi hain. Apna kaam select karein aur details bhariye.</p>
+            <div class="flex space-x-4">
+                <div class="bg-blue-600/30 backdrop-blur px-6 py-2 rounded border border-white/20 font-bold">#CSC_Pragya_Kendra</div>
+                <div class="bg-blue-600/30 backdrop-blur px-6 py-2 rounded border border-white/20 font-bold">#Pathargama</div>
+            </div>
+        </div>
+        <div class="w-1/3 bg-white/10 backdrop-blur-xl p-10 rounded-3xl border border-white/20 shadow-2xl">
+            <h3 class="text-3xl font-black text-yellow-400 mb-4 italic uppercase">Tatkal Help?</h3>
+            <p class="mb-8 font-medium italic">Urgent Form ya Ticket ke liye direct call karein.</p>
+            <a href="tel:6200210570" class="block bg-yellow-400 text-blue-900 py-4 rounded-xl font-black text-3xl text-center shadow-lg">6200210570</a>
+        </div>
+    </section>
+
+    <main class="py-16 px-10">
+        
+        <h3 class="cat-heading text-2xl">1. JharSewa & Certificates (Jharkhand)</h3>
+        <div class="grid grid-cols-4 gap-6 mb-12">
+            <div onclick="openDynamicForm('Jati (Caste) Certificate')" class="service-card">
+                <div class="icon-wrapper bg-blue-600"><i class="fas fa-file-contract"></i></div>
+                <span class="font-bold text-sm">CASTE CERTIFICATE</span>
+            </div>
+            <div onclick="openDynamicForm('Income (Aay) Certificate')" class="service-card">
+                <div class="icon-wrapper bg-green-600"><i class="fas fa-money-bill-wave"></i></div>
+                <span class="font-bold text-sm">INCOME CERTIFICATE</span>
+            </div>
+            <div onclick="openDynamicForm('Residence (Niwas) Certificate')" class="service-card">
+                <div class="icon-wrapper bg-teal-600"><i class="fas fa-home"></i></div>
+                <span class="font-bold text-sm">RESIDENCE CERTIFICATE</span>
+            </div>
+            <div onclick="openDynamicForm('Birth Certificate')" class="service-card">
+                <div class="icon-wrapper bg-pink-600"><i class="fas fa-baby"></i></div>
+                <span class="font-bold text-sm">BIRTH CERTIFICATE</span>
+            </div>
+        </div>
+
+        <h3 class="cat-heading text-2xl">2. PAN, Aadhar & Voter Seva</h3>
+        <div class="grid grid-cols-4 gap-6 mb-12">
+            <div onclick="openDynamicForm('PAN Card')" class="service-card">
+                <div class="icon-wrapper bg-orange-600"><i class="fas fa-id-card"></i></div>
+                <span class="font-bold text-sm">PAN CARD NEW/CORR</span>
+            </div>
+            <div onclick="openDynamicForm('Voter Card')" class="service-card">
+                <div class="icon-wrapper bg-blue-500"><i class="fas fa-address-card"></i></div>
+                <span class="font-bold text-sm">VOTER CARD SEVA</span>
+            </div>
+            <div onclick="openDynamicForm('Aadhar Download')" class="service-card">
+                <div class="icon-wrapper bg-emerald-600"><i class="fas fa-download"></i></div>
+                <span class="font-bold text-sm">AADHAR DOWNLOAD</span>
+            </div>
+            <div onclick="openDynamicForm('Aadhar Address Update')" class="service-card">
+                <div class="icon-wrapper bg-emerald-600"><i class="fas fa-map-marker-alt"></i></div>
+                <span class="font-bold text-sm">AADHAR ADDRESS UPDATE</span>
+            </div>
+        </div>
+
+        <h3 class="cat-heading text-2xl">3. Ticket & Passport Booking</h3>
+        <div class="grid grid-cols-4 gap-6 mb-12">
+            <div onclick="openDynamicForm('Flight Ticket')" class="service-card">
+                <div class="icon-wrapper bg-sky-500"><i class="fas fa-plane"></i></div>
+                <span class="font-bold text-sm">FLIGHT TICKET</span>
+            </div>
+            <div onclick="openDynamicForm('Tatkal Train Ticket')" class="service-card">
+                <div class="icon-wrapper bg-red-600"><i class="fas fa-train"></i></div>
+                <span class="font-bold text-sm text-red-600 font-black italic underline">TATKAL TRAIN TICKET</span>
+            </div>
+            <div onclick="openDynamicForm('Passport')" class="service-card">
+                <div class="icon-wrapper bg-indigo-700"><i class="fas fa-passport"></i></div>
+                <span class="font-bold text-sm">PASSPORT APPLY</span>
+            </div>
+            <div onclick="openDynamicForm('Driving License')" class="service-card">
+                <div class="icon-wrapper bg-slate-700"><i class="fas fa-car"></i></div>
+                <span class="font-bold text-sm">DRIVING LICENSE</span>
+            </div>
+        </div>
+
+        <h3 class="cat-heading text-2xl">4. Banking, Ration Card & Schemes</h3>
+        <div class="grid grid-cols-4 gap-6">
+            <div onclick="openDynamicForm('Banking Seva')" class="service-card">
+                <div class="icon-wrapper bg-indigo-900"><i class="fas fa-university"></i></div>
+                <span class="font-bold text-sm">CASH DEPOSIT/WITHDRAW</span>
+            </div>
+            <div onclick="openDynamicForm('Ration Card')" class="service-card">
+                <div class="icon-wrapper bg-yellow-600"><i class="fas fa-shopping-basket"></i></div>
+                <span class="font-bold text-sm">RATION CARD SEVA</span>
+            </div>
+            <div onclick="openDynamicForm('Pension')" class="service-card">
+                <div class="icon-wrapper bg-rose-600"><i class="fas fa-user-shield"></i></div>
+                <span class="font-bold text-sm">PENSION APPLY</span>
+            </div>
+            <div onclick="openDynamicForm('Online Form')" class="service-card">
+                <div class="icon-wrapper bg-gray-800"><i class="fas fa-edit"></i></div>
+                <span class="font-bold text-sm">ALL ONLINE JOBS FORM</span>
+            </div>
+        </div>
+
+        <p class="text-center py-20 text-gray-400 font-bold italic tracking-widest uppercase">Total 100+ services available at Pathargama Center</p>
+    </main>
+
+    <div id="form-modal">
+        <div class="modal-content shadow-2xl">
+            <div class="bg-blue-900 p-8 text-white flex justify-between items-center">
+                <h3 id="form-title" class="text-2xl font-black uppercase italic tracking-wider">Fill Details</h3>
+                <button onclick="closeForm()" class="text-5xl leading-none hover:text-red-500 transition">&times;</button>
+            </div>
+            
+            <form id="masterForm" class="p-10 space-y-6">
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <label class="block font-black text-gray-800 text-xs mb-2 uppercase">Full Name (Pura Naam)</label>
+                        <input type="text" id="custName" class="w-full border-2 p-3 rounded-xl focus:border-blue-600 outline-none" required>
+                    </div>
+                    <div>
+                        <label class="block font-black text-gray-800 text-xs mb-2 uppercase">WhatsApp Number</label>
+                        <input type="tel" id="custPhone" class="w-full border-2 p-3 rounded-xl focus:border-blue-600 outline-none" value="6200210570" required>
+                    </div>
+                </div>
+
+                <div id="extra-fields-area" class="space-y-6 pt-6 border-t-2 border-dashed border-gray-100">
+                </div>
+
+                <div class="bg-yellow-50 p-6 rounded-xl border-l-8 border-yellow-500 text-sm font-bold text-gray-700 italic">
+                    Note: Detail bharne ke baad niche button par click karein. Hum aapse WhatsApp par contact karenge documents mangwane ke liye.
+                </div>
+
+                <button type="button" onclick="sendToWhatsApp()" class="w-full bg-green-600 text-white font-black py-5 rounded-2xl text-xl shadow-xl hover:bg-green-700 transition uppercase italic">
+                    Submit Details to Mr Sam 2004
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-16 px-10 border-t-8 border-orange-600 text-center">
+        <h4 class="text-3xl font-black mb-4">MR SAM 2004</h4>
+        <p class="text-gray-400 mb-6 italic">Pathargama Godda's Authorised Digital Seva Kendra (Jharkhand CSC)</p>
+        <div class="flex justify-center space-x-10 text-3xl text-orange-500 mb-8">
+            <i class="fab fa-facebook"></i> <i class="fab fa-whatsapp"></i> <i class="fab fa-youtube"></i>
+        </div>
+        <p class="text-xs text-gray-600 uppercase tracking-widest">© 2026 MR SAM 2004 • All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function openDynamicForm(service) {
+            document.getElementById('form-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            document.getElementById('form-title').innerText = service + " - Application Form";
+            
+            let area = document.getElementById('extra-fields-area');
+            area.innerHTML = ""; // Clear
+
+            // 1. Flight Ticket specific fields
+            if(service === 'Flight Ticket') {
+                area.innerHTML = `
+                    <div class="grid grid-cols-2 gap-8">
+                        <div><label class="block font-black text-xs uppercase">From (Kahan Se)</label><input type="text" id="f-from" class="w-full border-2 p-3 rounded-xl" placeholder="Ex: Ranchi"></div>
+                        <div><label class="block font-black text-xs uppercase">To (Kahan Tak)</label><input type="text" id="f-to" class="w-full border-2 p-3 rounded-xl" placeholder="Ex: Delhi"></div>
+                    </div>
+                    <div><label class="block font-black text-xs uppercase">Journey Date</label><input type="date" id="f-date" class="w-full border-2 p-3 rounded-xl"></div>
+                `;
+            } 
+            // 2. Aadhar Download specific fields
+            else if(service === 'Aadhar Download') {
+                area.innerHTML = `
+                    <div class="grid grid-cols-2 gap-8">
+                        <div><label class="block font-black text-xs uppercase">Aadhar Number</label><input type="text" id="a-num" class="w-full border-2 p-3 rounded-xl" placeholder="12 Digit No"></div>
+                        <div><label class="block font-black text-xs uppercase">Date of Birth (DOB)</label><input type="date" id="a-dob" class="w-full border-2 p-3 rounded-xl"></div>
+                    </div>
+                `;
+            }
+            // 3. Voter Card specific fields
+            else if(service === 'Voter Card') {
+                area.innerHTML = `
+                    <div><label class="block font-black text-xs uppercase">Father's Name</label><input type="text" id="v-father" class="w-full border-2 p-3 rounded-xl"></div>
+                    <div><label class="block font-black text-xs uppercase">Village / Ward Address</label><textarea id="v-addr" class="w-full border-2 p-3 rounded-xl h-20"></textarea></div>
+                `;
+            }
+            // 4. Jati/Aay/Niwas specific fields
+            else if(service === 'Jati (Caste) Certificate' || service === 'Income (Aay) Certificate' || service === 'Residence (Niwas) Certificate') {
+                area.innerHTML = `
+                    <div><label class="block font-black text-xs uppercase">Aadhar Number</label><input type="text" id="j-aadhar" class="w-full border-2 p-3 rounded-xl"></div>
+                    <div><label class="block font-black text-xs uppercase">Block / Panchayat Name</label><input type="text" id="j-block" class="w-full border-2 p-3 rounded-xl"></div>
+                `;
+            }
+            // Default fields
+            else {
+                area.innerHTML = `
+                    <div><label class="block font-black text-xs uppercase">Any Extra Information</label><textarea id="e-info" class="w-full border-2 p-3 rounded-xl h-32" placeholder="Is service se judi koi extra detail yahan bharein..."></textarea></div>
+                `;
+            }
+        }
+
+        function closeForm() {
+            document.getElementById('form-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function sendToWhatsApp() {
+            let name = document.getElementById('custName').value;
+            let service = document.getElementById('form-title').innerText;
+            if(!name) { alert("Naam bharna zaruri hai!"); return; }
+
+            let msg = `Hello Mr Sam 2004,\n\nMera Name: ${name}\nMujhe *${service}* karwana hai.\nMaine website par details bhar di hain. Kripya process bataiye.`;
+            window.open("https://wa.me/916200210570?text=" + encodeURIComponent(msg));
+            closeForm();
+        }
+    </script>
+</body>
+</html>
