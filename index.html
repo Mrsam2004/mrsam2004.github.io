@@ -3,274 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1200"> 
-    <title>Mr Sam 2004 | Pragya Kendra Pathargama</title>
+    <title>Mr Sam 2004 | Digital Seva Portal</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
-        
-        body { 
-            font-family: 'Roboto', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            width: 100%; 
-            background-color: #f4f7f6;
-        }
-
-        /* Isse right side ki khali jagah khatam ho jayegi */
-        .full-width-container { width: 100%; }
-        .content-width { width: 95%; max-width: 1400px; margin: 0 auto; }
-
+        body { font-family: 'Roboto', sans-serif; margin: 0; width: 100%; background-color: #f4f7f6; }
         .nav-orange { background-color: #f0640d; }
         .hero-gradient { background: linear-gradient(135deg, #005a9c 0%, #003366 100%); }
         
-        /* Modal Design with Icons */
-        #full-service-modal { 
-            display: none; 
-            position: fixed; 
-            top: 0; left: 0; 
-            width: 100%; height: 100%; 
-            background: rgba(0,0,0,0.9); 
-            z-index: 9999; 
-            overflow-y: auto;
-            padding: 40px 0;
-        }
-
-        .modal-content {
-            background: white;
-            width: 95%;
-            max-width: 1200px;
-            margin: 0 auto;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-
-        .service-item-new {
-            display: flex;
-            align-items: center;
-            padding: 20px;
-            background: #fff;
-            border: 1px solid #eee;
-            border-radius: 10px;
-            transition: 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .service-item-new:hover {
-            border-color: #f0640d;
-            background: #fff8f4;
-            transform: translateY(-3px);
-        }
-
-        .icon-box {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            margin-right: 15px;
-            font-size: 22px;
-        }
-
-        marquee { font-weight: bold; color: #d9534f; background: #fff3cd; padding: 10px 0; border-bottom: 1px solid #ffeeba; display: block; width: 100%; }
+        /* Modal & Form Design */
+        #service-modal, #form-container { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; overflow-y: auto; padding: 20px 0; }
+        .modal-box { background: white; width: 95%; max-width: 1100px; margin: 0 auto; border-radius: 15px; overflow: hidden; }
+        
+        .service-btn { display: flex; align-items: center; padding: 20px; background: #fff; border: 1px solid #eee; border-radius: 10px; cursor: pointer; transition: 0.3s; }
+        .service-btn:hover { border-color: #f0640d; background: #fff8f4; transform: translateY(-3px); }
+        .icon-circle { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 20px; color: white; }
     </style>
 </head>
 <body>
 
-    <div class="bg-[#005a9c] text-white py-2 px-10 flex justify-between items-center text-sm font-bold">
-        <span><i class="fas fa-university mr-2"></i> AUTHORISED PRAGYA KENDRA (JHARKHAND CSC) - PATHARGAMA</span>
-        <div class="flex space-x-6">
-            <span><i class="fas fa-phone-alt mr-1"></i> +91 6200210570</span>
-            <span><i class="fas fa-envelope mr-1"></i> CONTACT@MRSAM2004.COM</span>
-        </div>
-    </div>
-
-    <header class="bg-white py-6 px-10 shadow-sm border-b">
-        <div class="full-width-container flex justify-between items-center px-4">
-            <div class="flex items-center space-x-4">
-                <div class="w-16 h-16 bg-blue-800 rounded-lg flex items-center justify-center shadow-lg">
-                    <i class="fas fa-laptop-code text-white text-3xl"></i>
-                </div>
-                <div>
-                    <h1 class="text-4xl font-black text-blue-900 tracking-tighter">MR SAM <span class="text-orange-600">2004</span></h1>
-                    <p class="text-xs font-bold text-gray-400 uppercase tracking-[5px]">Digital Seva Kendra</p>
-                </div>
-            </div>
-            
-            <div class="flex space-x-6">
-                <div class="bg-blue-50 px-6 py-2 rounded-lg border border-blue-100 text-center min-w-[180px]">
-                    <p class="text-[10px] font-bold text-blue-600 uppercase">Location</p>
-                    <p class="font-bold text-gray-800">PATHARGAMA, GODDA</p>
-                </div>
-                <div class="bg-green-50 px-6 py-2 rounded-lg border border-green-100 text-center min-w-[180px]">
-                    <p class="text-[10px] font-bold text-green-600 uppercase">WhatsApp</p>
-                    <p class="font-bold text-gray-800">6200210570</p>
-                </div>
+    <header class="bg-white py-6 px-10 shadow-sm border-b flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+            <div class="w-16 h-16 bg-blue-800 rounded-lg flex items-center justify-center shadow-lg text-white font-bold">SAM</div>
+            <div>
+                <h1 class="text-4xl font-black text-blue-900 uppercase">MR SAM 2004</h1>
+                <p class="text-xs font-bold text-orange-600 tracking-[5px] uppercase">Digital Seva Kendra</p>
             </div>
         </div>
+        <div class="font-bold text-blue-900">PATHARGAMA, GODDA | +91 6200210570</div>
     </header>
 
-    <marquee scrollamount="6">
-        📢 Latest Services: Birth & Death Certificate, Ration Card Correction, Ayushman Card, Train Tatkal & Passport Appointment Booking started... Visit Mr Sam 2004 Pathargama!
-    </marquee>
-
-    <nav class="nav-orange text-white shadow-lg sticky top-0 z-50">
-        <div class="full-width-container flex justify-between items-center px-10">
-            <ul class="flex font-bold text-sm uppercase">
-                <li class="hover:bg-orange-700 py-5 px-8"><a href="#"><i class="fas fa-home"></i> HOME</a></li>
-                <li class="hover:bg-orange-700 py-5 px-8"><a href="#">JHARSEWA</a></li>
-                <li onclick="openModal()" class="bg-orange-900 py-5 px-10 cursor-pointer border-x border-orange-700 flex items-center">
-                    <i class="fas fa-th-large mr-2 text-yellow-300"></i> ALL SERVICES <i class="fas fa-chevron-down ml-2 text-xs"></i>
-                </li>
-                <li class="hover:bg-orange-700 py-5 px-8"><a href="#">LATEST JOBS</a></li>
-                <li class="hover:bg-orange-700 py-5 px-8"><a href="#">DOWNLOAD ZONE</a></li>
-            </ul>
-            <div class="bg-white text-orange-600 px-6 py-2 rounded-full font-black text-sm flex items-center shadow-md">
-                <i class="fas fa-headset mr-2"></i> HELP DESK: 6200210570
-            </div>
-        </div>
+    <nav class="nav-orange text-white shadow-lg sticky top-0 z-50 py-4 px-10 flex justify-between">
+        <ul class="flex space-x-8 font-bold text-sm uppercase">
+            <li>HOME</li>
+            <li onclick="openServices()" class="cursor-pointer bg-orange-900 px-4 py-1 rounded">ALL SERVICES</li>
+        </ul>
+        <div class="bg-green-600 px-4 py-1 rounded font-bold">WhatsApp: 6200210570</div>
     </nav>
 
-    <section class="hero-gradient text-white py-24 px-10">
-        <div class="full-width-container flex justify-between items-center px-10">
-            <div class="w-3/5">
-                <h2 class="text-7xl font-black leading-[1.1] mb-6 uppercase">
-                    1000+ Online <br><span class="text-yellow-400 italic">Services Ek Hi Jagah</span>
-                </h2>
-                <p class="text-xl opacity-90 mb-10 border-l-4 border-orange-500 pl-6 max-w-2xl">
-                    Pathargama (Godda) ka sabse purana aur bharosemand Pragya Kendra. Sabhi sarkari form aur online kaamo ke liye aaj hi sampark karein.
-                </p>
-                <button onclick="openModal()" class="bg-yellow-500 text-black px-12 py-5 rounded-xl font-black text-2xl shadow-2xl hover:bg-yellow-400 transition transform hover:scale-105">
-                    START ONLINE WORK
-                </button>
-            </div>
-            <div class="w-2/5 flex flex-col items-end space-y-4">
-                <div class="bg-white/10 backdrop-blur-md p-10 rounded-3xl border border-white/20 text-center w-full max-w-md">
-                    <h3 class="text-3xl font-bold text-yellow-300 mb-2 italic underline">TATKAL BOOKING</h3>
-                    <p class="text-sm font-bold tracking-widest mb-6 opacity-80 uppercase">Train & Passport Appointments</p>
-                    <div class="bg-yellow-400 text-black py-5 rounded-2xl font-black text-3xl shadow-xl">6200210570</div>
-                </div>
-            </div>
-        </div>
+    <section class="hero-gradient text-white py-24 px-10 text-center">
+        <h2 class="text-7xl font-black mb-6 uppercase">Sarkari Services <span class="text-yellow-400 italic">Online Form</span></h2>
+        <button onclick="openServices()" class="bg-yellow-500 text-black px-12 py-5 rounded-xl font-black text-2xl shadow-2xl">Start Filling Form</button>
     </section>
 
-    <div id="full-service-modal">
-        <div class="modal-content">
-            <div class="bg-orange-600 p-6 flex justify-between items-center text-white sticky top-0 z-20">
-                <h2 class="text-3xl font-black italic uppercase">🚀 Our Digital Services Portal</h2>
-                <button onclick="closeModal()" class="text-5xl font-light hover:text-black">&times;</button>
+    <div id="service-modal">
+        <div class="modal-box">
+            <div class="bg-orange-600 p-6 flex justify-between items-center text-white">
+                <h2 class="text-2xl font-black uppercase">Click on Service to Fill Details</h2>
+                <button onclick="closeModal('service-modal')" class="text-4xl">&times;</button>
             </div>
-            
-            <div class="p-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <div class="service-item-new">
-                    <div class="icon-box bg-blue-100 text-blue-600"><i class="fas fa-id-card"></i></div>
-                    <span class="font-bold">PAN CARD APPLY</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-orange-100 text-orange-600"><i class="fas fa-link"></i></div>
-                    <span class="font-bold">PAN-AADHAR LINK</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-blue-100 text-blue-600"><i class="fas fa-search-plus"></i></div>
-                    <span class="font-bold">LOST PAN FIND</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-green-100 text-green-600"><i class="fas fa-download"></i></div>
-                    <span class="font-bold">AADHAR DOWNLOAD</span>
-                </div>
-
-                <div class="service-item-new">
-                    <div class="icon-box bg-blue-100 text-blue-600"><i class="fas fa-plane-departure"></i></div>
-                    <span class="font-bold">FLIGHT BOOKING</span>
-                </div>
-                <div class="service-item-new border-2 border-orange-500">
-                    <div class="icon-box bg-red-100 text-red-600"><i class="fas fa-train"></i></div>
-                    <span class="font-bold">TATKAL TICKET</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-purple-100 text-purple-600"><i class="fas fa-passport"></i></div>
-                    <span class="font-bold">PASSPORT APPLY</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-green-100 text-green-600"><i class="fas fa-university"></i></div>
-                    <span class="font-bold">CASH WITHDRAWAL</span>
-                </div>
-
-                <div class="service-item-new">
-                    <div class="icon-box bg-blue-100 text-blue-600"><i class="fas fa-file-invoice"></i></div>
-                    <span class="font-bold">JATI/AAY/NIWAS</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-red-100 text-red-600"><i class="fas fa-baby"></i></div>
-                    <span class="font-bold">BIRTH CERTIFICATE</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-yellow-100 text-yellow-600"><i class="fas fa-user-graduate"></i></div>
-                    <span class="font-bold">SCHOLARSHIP</span>
-                </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-indigo-100 text-indigo-600"><i class="fas fa-id-badge"></i></div>
+            <div class="p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="service-btn" onclick="openForm('VOTER CARD NEW/CORRECTION')">
+                    <div class="icon-circle bg-blue-600"><i class="fas fa-id-badge"></i></div>
                     <span class="font-bold">VOTER CARD SEVA</span>
                 </div>
-
-                <div class="service-item-new">
-                    <div class="icon-box bg-gray-100 text-gray-600"><i class="fas fa-print"></i></div>
-                    <span class="font-bold">COLOR PRINT/PHOTO</span>
+                <div class="service-btn" onclick="openForm('PAN CARD NEW/UPDATE')">
+                    <div class="icon-circle bg-orange-600"><i class="fas fa-id-card"></i></div>
+                    <span class="font-bold">PAN CARD SEVA</span>
                 </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-green-100 text-green-600"><i class="fas fa-shuttle-van"></i></div>
-                    <span class="font-bold">RATION CARD SEVA</span>
+                <div class="service-btn" onclick="openForm('TRAIN/TATKAL TICKET BOOKING')">
+                    <div class="icon-circle bg-red-600"><i class="fas fa-train"></i></div>
+                    <span class="font-bold">TRAIN/TATKAL TICKET</span>
                 </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-red-100 text-red-600"><i class="fas fa-file-signature"></i></div>
-                    <span class="font-bold">PENSION APPLY</span>
+                <div class="service-btn" onclick="openForm('PASSPORT APPLY/APPOINTMENT')">
+                    <div class="icon-circle bg-indigo-600"><i class="fas fa-passport"></i></div>
+                    <span class="font-bold">PASSPORT SEVA</span>
                 </div>
-                <div class="service-item-new">
-                    <div class="icon-box bg-blue-100 text-blue-600"><i class="fas fa-edit"></i></div>
-                    <span class="font-bold">ONLINE FORM FILL</span>
-                </div>
-            </div>
-            
-            <div class="bg-gray-100 p-8 text-center border-t">
-                <p class="text-xl font-bold text-blue-900">Sabhi Online Kaamo Ke Liye Sampark Karein: +91 6200210570</p>
             </div>
         </div>
     </div>
 
-    <footer class="bg-gray-900 text-white py-12 px-10">
-        <div class="full-width-container grid grid-cols-3 gap-10">
-            <div>
-                <h4 class="text-2xl font-black mb-4">MR SAM 2004</h4>
-                <p class="text-sm text-gray-400">Pathargama, Godda's leading Digital Seva Kendra. Serving thousands of customers since 2004 with speed and trust.</p>
+    <div id="form-container">
+        <div class="modal-box max-w-2xl bg-white shadow-2xl">
+            <div class="bg-blue-900 p-6 text-white flex justify-between">
+                <h3 id="form-title" class="text-xl font-bold uppercase">Form Detail</h3>
+                <button onclick="closeModal('form-container')" class="text-3xl">&times;</button>
             </div>
-            <div>
-                <h4 class="text-xl font-bold mb-4">Visit Our Shop</h4>
-                <p class="text-sm text-gray-400 italic">Main Road, Near Hospital Chowk,<br>Pathargama, Godda, Jharkhand - 814147</p>
-            </div>
-            <div class="text-right">
-                <h4 class="text-xl font-bold mb-4">Support</h4>
-                <p class="text-2xl text-orange-500 font-black">6200210570</p>
-                <div class="mt-4 flex justify-end space-x-4 text-2xl">
-                    <i class="fab fa-facebook hover:text-blue-500"></i>
-                    <i class="fab fa-whatsapp hover:text-green-500"></i>
-                    <i class="fab fa-youtube hover:text-red-500"></i>
+            <form class="p-8 space-y-4" id="mainForm">
+                <div>
+                    <label class="block font-bold text-gray-700">Customer Full Name (Pura Naam)</label>
+                    <input type="text" class="w-full border p-3 rounded bg-gray-50 focus:border-blue-500" placeholder="Enter Full Name" required>
                 </div>
-            </div>
+                <div>
+                    <label class="block font-bold text-gray-700">Father's Name</label>
+                    <input type="text" class="w-full border p-3 rounded bg-gray-50" placeholder="Father's Name" required>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700">Mobile Number (WhatsApp)</label>
+                    <input type="tel" class="w-full border p-3 rounded bg-gray-50" placeholder="6200210570" required>
+                </div>
+                <div>
+                    <label class="block font-bold text-gray-700">Full Address (Village, Block, Dist)</label>
+                    <textarea class="w-full border p-3 rounded bg-gray-50" rows="3" placeholder="Enter full address"></textarea>
+                </div>
+                <div class="bg-yellow-50 p-4 border-l-4 border-yellow-500 text-sm italic">
+                    Note: Form submit karne ke baad hamare representative aapse sampark karenge aur documents WhatsApp par mangwayenge.
+                </div>
+                <button type="button" onclick="submitToWhatsApp()" class="w-full bg-green-600 text-white font-black py-4 rounded-xl shadow-lg hover:bg-green-700 transition">
+                    SUBMIT TO MR SAM 2004
+                </button>
+            </form>
         </div>
-        <div class="mt-12 text-center text-xs text-gray-600 border-t border-gray-800 pt-6">
-            © 2026 MR SAM 2004 | PRAGYA KENDRA PATHARGAMA | ALL RIGHTS RESERVED
-        </div>
-    </footer>
+    </div>
 
     <script>
-        function openModal() { 
-            document.getElementById('full-service-modal').style.display = 'block'; 
-            document.body.style.overflow = 'hidden'; 
+        function openServices() { document.getElementById('service-modal').style.display = 'block'; }
+        
+        function openForm(serviceName) {
+            document.getElementById('service-modal').style.display = 'none';
+            document.getElementById('form-container').style.display = 'block';
+            document.getElementById('form-title').innerText = serviceName + " FORM";
         }
-        function closeModal() { 
-            document.getElementById('full-service-modal').style.display = 'none'; 
-            document.body.style.overflow = 'auto'; 
+
+        function closeModal(id) { document.getElementById(id).style.display = 'none'; }
+
+        function submitToWhatsApp() {
+            let title = document.getElementById('form-title').innerText;
+            let msg = "Hello Mr Sam 2004, mujhe " + title + " karwana hai. Meri details maine website par bhar di hai.";
+            window.open("https://wa.me/916200210570?text=" + encodeURIComponent(msg));
+            alert("Details Recorded! Aap ab WhatsApp par document bhej sakte hain.");
+            closeModal('form-container');
         }
     </script>
 </body>
