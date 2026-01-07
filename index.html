@@ -3,149 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1024">
-    <title>Mr Sam 2004 | Pathargama Digital Portal</title>
+    <title>Mr Sam 2004 | Pragya Kendra Pathargama | CSC Digital Seva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-        body { font-family: 'Poppins', sans-serif; width: 1024px; margin: 0 auto; background-color: #f0f2f5; box-shadow: 0 0 50px rgba(0,0,0,0.2); }
-        .hero-bg { background: linear-gradient(135deg, #004e92 0%, #000428 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+        body { font-family: 'Roboto', sans-serif; width: 1024px; margin: 0 auto; background-color: #f4f7f6; }
         .nav-orange { background-color: #f0640d; }
-        
-        /* News Ticker Style */
-        .ticker-wrapper { background: #fff; border-bottom: 2px solid #ddd; overflow: hidden; }
-        .ticker-text { display: inline-block; white-space: nowrap; animation: ticker 20s linear infinite; font-weight: bold; color: #d9534f; padding: 10px 0; }
-        @keyframes ticker { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
-
-        /* Modal Style */
-        #services-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 999; backdrop-filter: blur(8px); }
+        .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
+        .ticker-bg { background: #fff3cd; border-bottom: 1px solid #ffeeba; }
+        .service-box { transition: all 0.3s; border: 1px solid #e5e7eb; background: #fff; }
+        .service-box:hover { transform: translateY(-3px); border-color: #f0640d; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        marquee { font-weight: bold; color: #d9534f; padding: 8px 0; }
+        #full-service-modal { display: none; }
     </style>
 </head>
 <body>
 
-    <div class="bg-[#0088cc] text-white py-2 px-10 flex justify-between items-center text-sm">
-        <div><i class="fas fa-certificate mr-2 text-yellow-400"></i> Mr Sam 2004 - Authorised Digital Seva Kendra</div>
-        <div class="flex space-x-6">
-            <span><i class="fas fa-phone-alt"></i> 6200210570</span>
-            <div class="flex space-x-3"><i class="fab fa-facebook"></i> <i class="fab fa-youtube"></i></div>
+    <div class="bg-[#005a9c] text-white py-2 px-10 flex justify-between items-center text-xs font-bold uppercase tracking-wider">
+        <span><i class="fas fa-landmark mr-2"></i> Authorised Pragya Kendra (Jharkhand CSC) - Pathargama</span>
+        <div class="flex space-x-6 italic">
+            <span><i class="fas fa-phone-alt"></i> +91 6200210570</span>
+            <span><i class="fas fa-envelope"></i> contact@mrsam2004.com</span>
         </div>
     </div>
 
-    <header class="bg-white py-6 px-10 flex justify-between items-center">
+    <header class="bg-white py-6 px-10 flex justify-between items-center border-b">
         <div class="flex items-center space-x-4">
-            <div class="w-16 h-16 bg-blue-700 rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg border-b-4 border-blue-900">SAM</div>
+            <div class="bg-blue-800 p-3 rounded-lg shadow-inner">
+                <i class="fas fa-laptop-code text-white text-4xl"></i>
+            </div>
             <div>
-                <h1 class="text-3xl font-black text-gray-800 tracking-tighter">MR SAM <span class="text-blue-700">2004</span></h1>
-                <p class="text-xs text-orange-600 font-bold uppercase tracking-[3px]">Digital Seva • Pathargama</p>
+                <h1 class="text-4xl font-black text-blue-900 tracking-tighter">MR SAM <span class="text-orange-600">2004</span></h1>
+                <p class="text-sm font-bold text-gray-500 uppercase tracking-[4px]">Digital Seva Kendra</p>
             </div>
         </div>
-        <div class="flex space-x-8">
-            <div class="text-right border-r pr-6 border-gray-200">
-                <p class="text-xs text-gray-500 font-bold">CONTACT NO.</p>
-                <p class="text-lg font-black text-blue-900">6200210570</p>
+        <div class="flex space-x-4">
+            <div class="text-center bg-blue-50 px-6 py-2 rounded-lg border border-blue-100">
+                <p class="text-[10px] text-blue-600 font-bold uppercase">Location</p>
+                <p class="font-bold text-gray-800 text-sm">PATHARGAMA, GODDA</p>
             </div>
-            <div class="text-right">
-                <p class="text-xs text-gray-500 font-bold">TIMING</p>
-                <p class="text-lg font-black text-blue-900">09:00 AM - 08:00 PM</p>
+            <div class="text-center bg-green-50 px-6 py-2 rounded-lg border border-green-100">
+                <p class="text-[10px] text-green-600 font-bold uppercase">WhatsApp</p>
+                <p class="font-bold text-gray-800 text-sm">6200210570</p>
             </div>
         </div>
     </header>
 
-    <div class="ticker-wrapper">
-        <div class="ticker-text">
-            🔥 Latest: All Types of Online Form Filling Available | Train Tatkal Ticket Booking | PAN Card Update & Correction | Pension Application Started | Visit Mr Sam 2004 Pathargama...
-        </div>
+    <div class="ticker-bg">
+        <marquee scrollamount="6">
+            📢 New Vacancy: Army, Navy, SSC aur Police ke online form bhare ja rahe hain... 📢 JharSewa: Jati, Aay, Niwas, Pension aur Ration Card ki nayi suvidha uplabdha... 📢 Special: Train Tatkal Ticket aur Passport Appointment turant book karein...
+        </marquee>
     </div>
 
     <nav class="nav-orange shadow-lg sticky top-0 z-50">
-        <div class="flex justify-between items-center px-10">
+        <div class="flex justify-between items-center px-6">
             <ul class="flex text-white font-bold text-sm">
-                <li class="hover:bg-orange-700 py-5 px-8 transition"><a href="#"><i class="fas fa-home"></i> HOME</a></li>
-                <li class="hover:bg-orange-700 py-5 px-8 transition"><a href="#">DOWNLOAD ZONE</a></li>
-                <li class="bg-orange-800 py-5 px-8 cursor-pointer" onclick="openServices()">
-                    <i class="fas fa-th-large mr-2"></i> ALL SERVICES
+                <li class="hover:bg-orange-700 py-5 px-8"><a href="#"><i class="fas fa-home"></i> HOME</a></li>
+                <li class="hover:bg-orange-700 py-5 px-8"><a href="#">JHARSEWA</a></li>
+                <li class="bg-orange-800 py-5 px-8 cursor-pointer" onclick="openModal()">
+                    <i class="fas fa-grid-2 mr-2 text-yellow-300"></i> ALL SERVICES
                 </li>
-                <li class="hover:bg-orange-700 py-5 px-8 transition"><a href="#">LATEST JOBS</a></li>
-                <li class="hover:bg-orange-700 py-5 px-8 transition"><a href="#">CONTACT US</a></li>
+                <li class="hover:bg-orange-700 py-5 px-8"><a href="#">LATEST JOBS</a></li>
+                <li class="hover:bg-orange-700 py-5 px-8"><a href="#">DOWNLOAD ZONE</a></li>
             </ul>
-            <a href="https://wa.me/916200210570" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded font-black text-sm flex items-center shadow-inner">
-                <i class="fab fa-whatsapp text-lg mr-2"></i> WHATSAPP CHAT
+            <a href="tel:6200210570" class="bg-white text-orange-600 px-6 py-2 rounded-full font-black text-sm shadow-lg">
+                <i class="fas fa-headset mr-2"></i> HELP DESK
             </a>
         </div>
     </nav>
 
-    <section class="hero-bg text-white py-24 px-16 flex items-center relative overflow-hidden">
-        <div class="w-2/3 relative z-10">
-            <h2 class="text-6xl font-black leading-tight mb-6">
-                सभी तरह के <span class="text-yellow-400">ऑनलाइन <br> फॉर्म</span> घर बैठे भरवाएं
+    <section class="hero-gradient text-white py-20 px-16 flex items-center shadow-inner">
+        <div class="w-3/5">
+            <h2 class="text-5xl font-black leading-tight mb-4 uppercase">
+                1000+ Online <br><span class="text-yellow-400 italic">Services Ek Hi Jagah</span>
             </h2>
-            <p class="text-xl opacity-90 mb-10 max-w-xl border-l-4 border-yellow-400 pl-4">
-                Pathargama Godda's most trusted Cyber Cafe. We provide fast & secure online services since 2004.
+            <p class="text-lg opacity-90 mb-8 border-l-4 border-orange-400 pl-4">
+                Pragya Kendra Pathargama (Jharkhand CSC). Sabhi sarkari aur gair-sarkari online kaamo ke liye aaj hi sampark karein.
             </p>
-            <div class="flex space-x-4">
-                <button onclick="openServices()" class="bg-white text-blue-900 px-10 py-4 rounded font-black text-lg shadow-2xl hover:bg-gray-100 transition">Get Started Now</button>
+            <div class="flex flex-wrap gap-2 text-xs font-bold">
+                <span class="bg-red-600 px-4 py-1 rounded">ARMY</span>
+                <span class="bg-white text-blue-900 px-4 py-1 rounded">SSC</span>
+                <span class="bg-green-600 px-4 py-1 rounded">RAILWAY</span>
+                <span class="bg-orange-500 px-4 py-1 rounded">POLICE</span>
             </div>
         </div>
-        <div class="w-1/3 text-right">
-            <div class="space-y-4">
-                <div class="inline-block bg-yellow-500 text-black px-10 py-3 rounded-md font-black text-2xl shadow-lg">ARMY</div><br>
-                <div class="inline-block bg-green-600 text-white px-10 py-3 rounded-md font-black text-2xl shadow-lg">NAVY</div><br>
-                <div class="inline-block bg-red-600 text-white px-10 py-3 rounded-md font-black text-2xl shadow-lg">SSC</div><br>
-                <div class="inline-block bg-purple-600 text-white px-10 py-3 rounded-md font-black text-2xl shadow-lg">POLICE</div>
-            </div>
-            <div class="mt-10 text-xl font-bold italic text-yellow-300">Central & State Gov. Vacancies</div>
+        <div class="w-2/5 bg-white/10 backdrop-blur-md p-8 rounded-3xl border border-white/20 text-center">
+            <h3 class="text-2xl font-bold text-yellow-300 mb-2 underline">TATKAL BOOKING</h3>
+            <p class="text-sm mb-6 uppercase tracking-widest">Train & Passport Appointments</p>
+            <a href="https://wa.me/916200210570" class="block bg-yellow-400 text-black py-4 rounded-xl font-black text-xl shadow-2xl hover:bg-yellow-300 transition">6200210570</a>
         </div>
     </section>
 
-    <section class="py-16 px-10 grid grid-cols-3 gap-10 bg-white">
-        <div class="p-8 rounded-2xl bg-blue-50 border border-blue-100 text-center">
-            <i class="fas fa-id-card text-5xl text-blue-600 mb-6"></i>
-            <h3 class="text-xl font-bold mb-4">PAN Seva</h3>
-            <p class="text-gray-600 text-sm font-medium leading-relaxed">PAN Apply, Update, Aadhar Link & Lost PAN Recovery.</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-orange-50 border border-orange-100 text-center">
-            <i class="fas fa-train text-5xl text-orange-600 mb-6"></i>
-            <h3 class="text-xl font-bold mb-4">Tickets</h3>
-            <p class="text-gray-600 text-sm font-medium leading-relaxed">Train (Tatkal Specialist), Flight & Bus Bookings.</p>
-        </div>
-        <div class="p-8 rounded-2xl bg-green-50 border border-green-100 text-center">
-            <i class="fas fa-file-invoice text-5xl text-green-600 mb-6"></i>
-            <h3 class="text-xl font-bold mb-4">Pension Seva</h3>
-            <p class="text-gray-600 text-sm font-medium leading-relaxed">Vridha, Vidhwa & Viklang Pension Application.</p>
+    <section class="py-12 px-10">
+        <h2 class="text-2xl font-bold text-center mb-10 text-gray-800 uppercase border-b-2 border-orange-500 pb-2 inline-block">Popular Services</h2>
+        
+        <div class="grid grid-cols-4 gap-4">
+            <div class="service-box p-6 rounded-xl text-center">
+                <i class="fas fa-file-contract text-3xl text-blue-600 mb-4"></i>
+                <h4 class="font-bold text-sm uppercase">Certificate Seva</h4>
+                <p class="text-[10px] text-gray-500 mt-1">Jati, Aay, Niwas, Birth/Death</p>
+            </div>
+            <div class="service-box p-6 rounded-xl text-center">
+                <i class="fas fa-university text-3xl text-green-600 mb-4"></i>
+                <h4 class="font-bold text-sm uppercase">Banking & AEPS</h4>
+                <p class="text-[10px] text-gray-500 mt-1">Account, Withdrawal, APY</p>
+            </div>
+            <div class="service-box p-6 rounded-xl text-center">
+                <i class="fas fa-ticket-alt text-3xl text-orange-600 mb-4"></i>
+                <h4 class="font-bold text-sm uppercase">Tickets Seva</h4>
+                <p class="text-[10px] text-gray-500 mt-1">Train, Tatkal, Flight, Bus</p>
+            </div>
+            <div class="service-box p-6 rounded-xl text-center">
+                <i class="fas fa-id-card text-3xl text-red-600 mb-4"></i>
+                <h4 class="font-bold text-sm uppercase">PAN & Aadhar</h4>
+                <p class="text-[10px] text-gray-500 mt-1">New, Update, Link, Download</p>
+            </div>
         </div>
     </section>
 
-    <div id="services-overlay">
-        <div class="max-w-4xl mx-auto mt-20 bg-white rounded-3xl overflow-hidden shadow-2xl">
-            <div class="bg-orange-600 p-6 flex justify-between items-center text-white">
-                <h2 class="text-2xl font-bold uppercase tracking-widest italic">All Digital Services List</h2>
-                <button onclick="closeServices()" class="text-4xl hover:text-black">&times;</button>
+    <div id="full-service-modal" class="fixed inset-0 bg-black/90 z-[999] p-10 overflow-y-auto">
+        <div class="max-w-6xl mx-auto bg-white rounded-3xl overflow-hidden shadow-2xl">
+            <div class="bg-blue-900 p-6 flex justify-between items-center text-white">
+                <h2 class="text-2xl font-bold italic underline">MR SAM 2004 - ALL SERVICES LIST</h2>
+                <button onclick="closeModal()" class="text-5xl font-light hover:text-red-500">&times;</button>
             </div>
-            <div class="p-10 grid grid-cols-2 gap-4 h-[500px] overflow-y-auto">
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">PAN CARD APPLY / UPDATE</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">PAN-AADHAR LINKING</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">GUM HUWA PAN CARD (BY AADHAR)</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">VOTER CARD APPLY & UPDATE</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">VOTER MOBILE NO. LINK</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">AADHAR CARD DOWNLOAD</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">AADHAR ADDRESS UPDATE</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">TRAIN TICKET BOOKING</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">TATKAL TICKET BOOKING</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">FLIGHT TICKET BOOKING</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">ALL TYPES ONLINE FORM FILLING</div>
-                <div class="p-4 bg-gray-100 rounded-lg border-l-4 border-blue-600 font-bold">PENSION APPLY</div>
+            
+            <div class="p-10 grid grid-cols-3 gap-10">
+                <div>
+                    <h5 class="font-black text-blue-700 border-b-2 mb-4 pb-1 uppercase">JharSewa & RTPS</h5>
+                    <ul class="text-xs space-y-2 font-bold text-gray-700">
+                        <li>• Jati (Caste) Certificate</li>
+                        <li>• Aay (Income) Certificate</li>
+                        <li>• Niwas (Residence) Certificate</li>
+                        <li>• Character Certificate</li>
+                        <li>• EWS & OBC/BC/EBC Seva</li>
+                        <li>• Birth & Death Certificate</li>
+                        <li>• Jamabandi & Lagan Rasid</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-green-700 border-b-2 mb-4 pb-1 uppercase">Banking & Finance</h5>
+                    <ul class="text-xs space-y-2 font-bold text-gray-700">
+                        <li>• Bank Account Opening (CSP/BC)</li>
+                        <li>• Cash Deposit/Withdrawal (AEPS)</li>
+                        <li>• Insurance (LIC/PMJJBY/PMSBY)</li>
+                        <li>• Atal Pension Yojana (APY)</li>
+                        <li>• Jeevan Pramaan (Digital Life)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-orange-700 border-b-2 mb-4 pb-1 uppercase">Cards & Schemes</h5>
+                    <ul class="text-xs space-y-2 font-bold text-gray-700">
+                        <li>• Ration Card New/Correction</li>
+                        <li>• Voter ID New/Correction</li>
+                        <li>• Ayushman Bharat (PM-JAY) Card</li>
+                        <li>• e-Shram & Labour Card Seva</li>
+                        <li>• PM Kisan Registration/KCC</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-red-700 border-b-2 mb-4 pb-1 uppercase">Travel & Passport</h5>
+                    <ul class="text-xs space-y-2 font-bold text-gray-700">
+                        <li>• Passport Apply & Appointment</li>
+                        <li>• Normal & Tatkal Train Tickets</li>
+                        <li>• Flight & Bus Booking</li>
+                        <li>• Driving License (LL/DL)</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-purple-700 border-b-2 mb-4 pb-1 uppercase">Education Seva</h5>
+                    <ul class="text-xs space-y-2 font-bold text-gray-700">
+                        <li>• All Types Online Exam Forms</li>
+                        <li>• Scholarship Apply Seva</li>
+                        <li>• Admit Card & Result Print</li>
+                        <li>• APAR ID / ABC ID Support</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-black text-gray-700 border-b-2 mb-4 pb-1 uppercase">Printing & Typing</h5>
+                    <ul class="text-xs space-y-2 font-bold text-gray-700">
+                        <li>• Color/B&W Print & Photocopy</li>
+                        <li>• Lamination & Scan Seva</li>
+                        <li>• Resume / CV / Affidavit Typing</li>
+                        <li>• Passport Size Photo Seva</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-gray-50 p-6 text-center border-t">
+                <p class="font-bold text-blue-900 mb-2 underline italic">Sabhi Sevaon Ke Liye Sampark Karein: 6200210570</p>
             </div>
         </div>
     </div>
 
-    <footer class="bg-gray-900 text-white py-10 text-center">
-        <p class="text-xl font-black italic">MR SAM 2004 - Pathargama, Godda</p>
-        <p class="text-gray-500 mt-2">All Rights Reserved © 2026</p>
+    <footer class="bg-gray-900 text-white py-12 px-10">
+        <div class="grid grid-cols-3 gap-10">
+            <div>
+                <h4 class="text-xl font-bold mb-4">MR SAM 2004</h4>
+                <p class="text-xs text-gray-400 leading-relaxed">Pragya Kendra (Jharkhand CSC). We provide 1000+ government and central services at Pathargama, Godda since 2004.</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Address</h4>
+                <p class="text-xs text-gray-400 leading-relaxed italic underline">Main Bazar, Near Hospital Road,<br>Pathargama, Godda, Jharkhand - 814147</p>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold mb-4">Quick Contact</h4>
+                <p class="text-sm font-bold text-orange-500 italic">Call: 6200210570</p>
+                <p class="text-sm text-gray-400 mt-2">Email: ved@onlinecybercafe.com</p>
+            </div>
+        </div>
+        <div class="mt-10 pt-6 border-t border-gray-800 text-center text-[10px] text-gray-500 uppercase tracking-widest">
+            © 2026 Mr Sam 2004 | Designed for Pragya Kendra Jharkhand
+        </div>
     </footer>
 
     <script>
-        function openServices() { document.getElementById('services-overlay').style.display = 'block'; }
-        function closeServices() { document.getElementById('services-overlay').style.display = 'none'; }
+        function openModal() { document.getElementById('full-service-modal').style.display = 'block'; }
+        function closeModal() { document.getElementById('full-service-modal').style.display = 'none'; }
     </script>
 </body>
 </html>
